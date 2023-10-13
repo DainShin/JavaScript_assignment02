@@ -11,11 +11,11 @@ function changeCustomColor() {
     // I change the data type to numeric type by using "Number", so that I can check the value through if-else statement.
     const customNumber = Number(document.querySelector('#customNumber').value);
     
-    // If this method is called, this student number will be shown. 
+    // If the changeCustomColor button is clicked, this student number will be shown. 
     myStudentId.textContent = '200535561';
     
     // According to the user input value, the background colour will be changed.
-    if (customNumber <= 0 || customNumber >= 100)
+    if (customNumber <= 0 || customNumber > 100)
         body.style.backgroundColor = 'red';
     else if (customNumber > 0 && customNumber <= 20)
         body.style.backgroundColor = 'green';
@@ -33,7 +33,7 @@ function changeCustomColor() {
 function changeRandomColor() {
     // According to the randomly generated number, the backgrond colour will be changed.
     const randNum = Math.floor(Math.random()*(100-1+1)+1);
-    if (randNum <= 0 || randNum >= 100)
+    if (randNum <= 0 || randNum > 100)
         body.style.backgroundColor = 'red';
     else if (randNum > 0 && randNum <= 20)
         body.style.backgroundColor = 'green';
@@ -58,7 +58,7 @@ function addList() {
         // The newly created option element will be stored in the "option" variable.
         const option = document.createElement('option');
         option.value = imgList[i];  //  option.value will store the full paths of images
-        // I set the names in the option by using relace
+        // I set the names in the option menu by using relace
         const fileName = imgList[i].replace('img/', ''); 
         option.textContent = fileName;
         imageSelect.appendChild(option);
